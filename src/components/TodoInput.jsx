@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const TodoInput = ({ onAddTodo }) => {
+const TodoInput = ({ 
+  onAddTodo,
+  label = '',
+  placeholder = '',
+  btnLabel = '',
+}) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleAddTodo = (e) => {
@@ -15,16 +20,16 @@ const TodoInput = ({ onAddTodo }) => {
   return (
     <Form onSubmit={handleAddTodo}>
       <Form.Group controlId="formBasicTodo">
-        <Form.Label>New Todo</Form.Label>
+        <Form.Label>{ label }</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter a new todo"
+          placeholder={placeholder}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
       </Form.Group>
       <Button variant="primary" type="submit" className="mt-2">
-        Add Todo
+        { btnLabel }
       </Button>
     </Form>
   );

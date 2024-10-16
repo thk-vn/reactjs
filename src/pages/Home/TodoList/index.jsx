@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
+import TodoInput from '../../../components/TodoInput';
 import { v4 as uuidv4 } from 'uuid'; // Import uuid để tạo id
-import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 const MainTodo = () => {
@@ -11,7 +11,7 @@ const MainTodo = () => {
     const newTodo = {
       id: uuidv4(), // Tạo id duy nhất cho mỗi todo
       text,
-      completed: false, // Trạng thái hoàn thành
+      completed: false,  // Trạng thái hoàn thành
     };
     setTodos([newTodo, ...todos]); // Thêm todo mới vào danh sách
   };
@@ -33,7 +33,12 @@ const MainTodo = () => {
   return (
     <>
       <h3>Todo List (useState)</h3>
-      <TodoInput onAddTodo={handleAddTodo} />
+      <TodoInput 
+        onAddTodo={handleAddTodo}
+        label="New Todo"
+        placeholder="Enter a new todo"
+        btnLabel="Add Todo"
+      />
       <TodoList 
         todos={todos} 
         onDeleteTodo={handleDeleteTodo} 
