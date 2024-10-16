@@ -1,0 +1,37 @@
+.fui-navbar-basic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      height: 50px;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-link {
+    transition: linear .25s;
+    font-weight: 500;
+    font-size: 14px;
+
+    &:hover {
+      color: #1dc071;
+    }
+  }
+}
